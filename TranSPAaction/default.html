@@ -13,20 +13,17 @@
                 <th>Debit</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody data-bind="foreach: transactions">
             <tr>
-                <td>1/1/2013</td>
-                <td>First</td>
-                <td>10.00</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>2/1/2013</td>
-                <td>Second</td>
-                <td></td>
-                <td>10.00</td>
+                <td data-bind="text: date"></td>
+                <td data-bind="text: details"></td>
+                <td data-bind="text: creditAmount"></td>
+                <td data-bind="text: debitAmount"></td>
             </tr>
         </tbody>
     </table>
+
+    <script src="Scripts/knockout-3.0.0.js"></script>
+    <script src="Scripts/transactions.js"></script>
 </body>
 </html>

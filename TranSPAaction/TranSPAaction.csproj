@@ -69,6 +69,7 @@
     <Content Include="default.html" />
     <Content Include="Scripts\knockout-3.0.0.debug.js" />
     <Content Include="Scripts\knockout-3.0.0.js" />
+    <Content Include="Scripts\transactions.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
