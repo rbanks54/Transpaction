@@ -68,9 +68,13 @@
   <ItemGroup>
     <Content Include="default.html" />
     <Content Include="qunit-1.12.0.css" />
+    <Content Include="Scripts\app.js" />
     <Content Include="Scripts\knockout-3.0.0.debug.js" />
     <Content Include="Scripts\knockout-3.0.0.js" />
     <Content Include="Scripts\qunit-1.12.0.js" />
+    <Content Include="Scripts\r.js" />
+    <Content Include="Scripts\require.js" />
+    <Content Include="Scripts\services.js" />
     <Content Include="Scripts\tests.js" />
     <Content Include="Scripts\transactions.js" />
     <None Include="Scripts\_references.js" />
