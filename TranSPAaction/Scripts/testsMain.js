@@ -15,10 +15,10 @@
 });
 
 require(
-    ['QUnit', 'tests'],
-    function (QUnit, tests) {
-        tests.run();
-        // start QUnit.
+    ['QUnit', 'tests/integration','tests/mocks'],
+    function (QUnit, integration, mocks) {
+        integration.run();
+        mocks.run();
         QUnit.load();
         QUnit.start();
     }
