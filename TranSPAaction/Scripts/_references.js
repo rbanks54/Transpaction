@@ -7,3 +7,4 @@
 /// <reference path="require.js" />
 /// <reference path="r.js" />
 /// <reference path="app.js" />
+/// <reference path="testsmain.js" />

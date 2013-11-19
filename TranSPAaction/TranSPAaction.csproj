@@ -76,6 +76,7 @@
     <Content Include="Scripts\require.js" />
     <Content Include="Scripts\services.js" />
     <Content Include="Scripts\tests.js" />
+    <Content Include="Scripts\testsMain.js" />
     <Content Include="Scripts\transactions.js" />
     <None Include="Scripts\_references.js" />
     <Content Include="test.html" />
@@ -98,7 +99,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>44795</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
