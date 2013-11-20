@@ -3,10 +3,16 @@
 define(['jquery'], function ($) {
     return function () {
         this.loadTransactions = function () {
-            $.ajax('//transactions')
-            .done(function (data) {
-                return data;
-            });
+            var deferred = $.Deferred();
+            $.ajax('/transactions')
+                .done(function(data) {
+                    deferred.resolve(data);
+                })
+                .fail(function(response) {
+                    console.log("fail!" + response);
+                    deferred.reject(response);
+                });
+            return deferred;
         };
     };
 });

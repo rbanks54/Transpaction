@@ -1,27 +1,35 @@
 ﻿define(['QUnit', 'services'], function (QUnit, service) {
-    var run = function () {
-        QUnit.module('service tests');
-
-        var server = sinon.fakeServer.create();
-
+    var run = function() {
+        var server = {};
         var resultData = [
             { date: '1/1/2013', datails: 'first', creditAmount: 10 },
             { date: '2/2/2013', details: 'second', debitAmount: 10 }
         ];
-
-        server.respondWith('GET', '//transactions',
-            function (xhr) {
-                xhr.respond(200, { "Content-Type": "application/json" },
-                        JSON.stringify(resultData));
-            });
-
         var dataService = new service();
 
+        QUnit.module('service tests', {
+            setup: function () {
+                server = sinon.fakeServer.create();
+                server.respondWith(
+                    'GET',
+                    '/transactions',
+                    [200, { "Content-Type": "application/json" }, JSON.stringify(resultData)]
+                    );
+            },
+            teardown: function () {
+                server.restore();
+            }
+        });
+
         QUnit.asyncTest('should load data from a stubbed out REST service', function () {
-            var result = dataService.loadTransactions();
+            //dataService.loadTransactions(function(result) {
+            //    QUnit.strictEqual(result.length, 2, 'length should be 2');
+            //});
+            dataService.loadTransactions().done(function (result) {
+                QUnit.strictEqual(result.length, 2, 'length should be 2');
+            });
             server.respond();
             QUnit.start();
-            QUnit.strictEqual(result.length, 2, 'length should be 2');
         });
 
     };

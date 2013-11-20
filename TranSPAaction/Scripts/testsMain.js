@@ -15,12 +15,10 @@
     }
 });
 
-//require(['QUnit', 'tests/integration','tests/mocks', 'tests/serviceTests'],
-//function (QUnit, integration, mocks, serviceTests) {
-require(['QUnit', 'tests/serviceTests'],
-    function (QUnit, serviceTests) {
-        //integration.run();
-        //mocks.run();
+require(['QUnit', 'tests/integration','tests/mocks', 'tests/serviceTests'],
+function (QUnit, integration, mocks, serviceTests) {
+        integration.run();
+        mocks.run();
         serviceTests.run();
         QUnit.load();
         QUnit.start();
