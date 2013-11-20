@@ -23,7 +23,7 @@ define(['Squire', 'QUnit'], function (squire, QUnit) {
                     var viewModel = new transactionsModel();
 
                     QUnit.test('should load data from a web service', function () {
-                        //this call should use the fake transactionService
+                        //this call will use the fake transactionService
                         var transactions = viewModel.transactions();
                         QUnit.strictEqual(transactions.length, 2, 'length should be 2');
                     });

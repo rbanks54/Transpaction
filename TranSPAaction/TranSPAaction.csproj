@@ -58,6 +58,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <None Include="Scripts\jquery-2.0.3.intellisense.js" />
+    <Content Include="Scripts\jquery-2.0.3.js" />
+    <Content Include="Scripts\jquery-2.0.3.min.js" />
+    <Content Include="Scripts\jquery-2.0.3.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -75,10 +79,12 @@
     <Content Include="Scripts\r.js" />
     <Content Include="Scripts\require.js" />
     <Content Include="Scripts\services.js" />
+    <Content Include="Scripts\sinon-1.7.3.js" />
     <Content Include="Scripts\Squire.js" />
     <Content Include="Scripts\tests\integration.js" />
     <Content Include="Scripts\tests\mocks.js" />
     <Content Include="Scripts\testsMain.js" />
+    <Content Include="Scripts\tests\serviceTests.js" />
     <Content Include="Scripts\transactions.js" />
     <None Include="Scripts\_references.js" />
     <Content Include="test.html" />

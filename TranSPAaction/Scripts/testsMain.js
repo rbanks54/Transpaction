@@ -1,7 +1,8 @@
 ﻿require.config({
     paths: {
         'QUnit': 'qunit-1.12.0',
-        'ko' : 'knockout-3.0.0'
+        'ko': 'knockout-3.0.0',
+        'jquery': 'jquery-2.0.3'
     },
     shim: {
         'QUnit': {
@@ -14,11 +15,13 @@
     }
 });
 
-require(
-    ['QUnit', 'tests/integration','tests/mocks'],
-    function (QUnit, integration, mocks) {
-        integration.run();
-        mocks.run();
+//require(['QUnit', 'tests/integration','tests/mocks', 'tests/serviceTests'],
+//function (QUnit, integration, mocks, serviceTests) {
+require(['QUnit', 'tests/serviceTests'],
+    function (QUnit, serviceTests) {
+        //integration.run();
+        //mocks.run();
+        serviceTests.run();
         QUnit.load();
         QUnit.start();
     }
