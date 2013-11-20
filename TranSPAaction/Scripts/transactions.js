@@ -4,9 +4,16 @@
 
 define(['ko', 'services'], function(ko, service) {
     return function () {
+        var self = this;
         var svc = new service();
-        var data = svc.loadTransactions();
-        this.transactions = ko.observableArray(data);
+
+        var refresh = function (data) {
+            self.transactions(data);
+        };
+
+        self.transactions = ko.observableArray([]);
+        svc.loadTransactions().done(refresh);
+
     };
 });
 

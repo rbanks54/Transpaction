@@ -9,5 +9,7 @@ namespace TranSPAaction.api
     {
         public DateTime Date { get; set; }
         public string Details { get; set; }
+        public int CreditAmount { get; set; }
+        public int DebitAmount { get; set; }
     }
 }

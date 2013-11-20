@@ -16,7 +16,9 @@ namespace TranSPAaction.api
                 transactions.Add(new Transaction()
                 {
                     Date = DateTime.Now.AddDays(i),
-                    Details = "Transaction " + i
+                    Details = "Transaction " + i,
+                    CreditAmount = 10 + i,
+                    DebitAmount = 10 - i
                 });
             }
             return transactions;
