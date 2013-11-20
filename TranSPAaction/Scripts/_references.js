@@ -13,3 +13,4 @@
 /// <reference path="tests/servicetests.js" />
 /// <reference path="sinon-1.7.3.js" />
 /// <reference path="jquery-2.0.3.js" />
+/// <reference path="../content/js/ss-validation.js" />
