@@ -10,7 +10,16 @@ namespace TranSPAaction.api
     {
         public IList<Transaction> Get(TransactionRequest request)
         {
-            return new List<Transaction>();
+            var transactions = new List<Transaction>();
+            for (int i = 1; i < 30; i++)
+            {
+                transactions.Add(new Transaction()
+                {
+                    Date = DateTime.Now.AddDays(i),
+                    Details = "Transaction " + i
+                });
+            }
+            return transactions;
         }
     }
 }
