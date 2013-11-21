@@ -5,7 +5,7 @@
 
 define(['Squire', 'QUnit'], function (squire, QUnit) {
     var run = function () {
-        QUnit.module('unit tests');
+        QUnit.module('mocking tests');
 
         var injector = new squire();
 
@@ -27,8 +27,9 @@ define(['Squire', 'QUnit'], function (squire, QUnit) {
                 .require(['transactions'], function (transactionsModel) {
                     var viewModel = new transactionsModel();
 
-                    QUnit.test('should load data from a fake web service', function () {
+                    QUnit.asyncTest('should load data from a mock web service', function () {
                         var transactions = viewModel.transactions();
+                        QUnit.start();
                         QUnit.strictEqual(transactions.length, 2, 'length should be 2');
                     });
                 });
