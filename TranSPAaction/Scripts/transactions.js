@@ -14,6 +14,15 @@ define(['ko', 'services'], function(ko, service) {
         self.transactions = ko.observableArray([]);
         svc.loadTransactions().done(refresh);
 
+        self.newTxDescription = ko.observable(undefined);
+        self.addTransaction = function() {
+            self.transactions.push({
+                date: '1/1/2013',
+                details: self.newTxDescription(),
+                creditAmount: 10,
+                debitAmount: 0
+            });
+        };
     };
 });
 

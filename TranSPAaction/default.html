@@ -4,6 +4,11 @@
     <title></title>
 </head>
 <body>
+    <form data-bind="submit: addTransaction">
+        <input type="text" data-bind="value: newTxDescription" placeholder="add transaction description here" />
+        <input type="submit" class="btn-primary" value="Add" />
+    </form>
+
     <table>
         <thead>
             <tr>

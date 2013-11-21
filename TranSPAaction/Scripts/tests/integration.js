@@ -13,7 +13,7 @@ define(['QUnit','transactions'], function (QUnit, transactionsModel) {
         });
 
         QUnit.test('calls a non mocked function', function () {
-            QUnit.strictEqual(viewModel.transactions().length, 1, 'The length should be 1.');
+            QUnit.ok(viewModel.transactions().length > 1, true, 'There should be more than 1 transaction.');
         });
 
         QUnit.test('should all have dates', function (assert) {

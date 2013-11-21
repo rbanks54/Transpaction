@@ -10,11 +10,16 @@ define(['Squire', 'QUnit'], function (squire, QUnit) {
         var injector = new squire();
 
         var mockService = function () {
-            this.loadTransactions = function() {
-                return [
+            this.loadTransactions = function () {
+                var testData = [
                     { date: '1/1/2013', datails: 'first', creditAmount: 10 },
                     { date: '2/2/2013', details: 'second', debitAmount: 10 }
                 ];
+                return {
+                    done: function(callback) {
+                        callback(testData);
+                    }
+                };
             };
         };
 
@@ -22,8 +27,7 @@ define(['Squire', 'QUnit'], function (squire, QUnit) {
                 .require(['transactions'], function (transactionsModel) {
                     var viewModel = new transactionsModel();
 
-                    QUnit.test('should load data from a web service', function () {
-                        //this call will use the fake transactionService
+                    QUnit.test('should load data from a fake web service', function () {
                         var transactions = viewModel.transactions();
                         QUnit.strictEqual(transactions.length, 2, 'length should be 2');
                     });
