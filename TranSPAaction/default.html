@@ -2,12 +2,24 @@
 <html>
 <head>
     <title></title>
+    <style>
+        #chart div {
+            font: 10px sans-serif;
+            background-color: steelblue;
+            text-align: right;
+            padding: 3px;
+            margin: 1px;
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <form data-bind="submit: addTransaction">
         <input type="text" data-bind="value: newTxDescription" placeholder="add transaction description here" />
         <input type="submit" class="btn-primary" value="Add" />
     </form>
+
+    <div id="chart"></div>
 
     <table>
         <thead>

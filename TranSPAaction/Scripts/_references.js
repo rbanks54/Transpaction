@@ -14,3 +14,4 @@
 /// <reference path="sinon-1.7.3.js" />
 /// <reference path="jquery-2.0.3.js" />
 /// <reference path="jquery.signalr-2.0.0.js" />
+/// <reference path="d3.v3.js" />

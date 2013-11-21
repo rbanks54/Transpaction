@@ -3,6 +3,7 @@
         'ko': 'knockout-3.0.0',
         'jquery': 'jquery-2.0.3',
         'signalr': 'jquery.signalR-2.0.0',
+        'd3': 'd3.v3',
         'hubs': '/signalr/hubs?'
     },
     shim: {
@@ -12,6 +13,9 @@
         },
         'hubs' : {
             deps: ['signalr']
+        },
+        'd3': {
+            exports: 'd3'
         }
     }
 });
