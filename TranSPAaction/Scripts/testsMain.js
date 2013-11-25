@@ -1,7 +1,8 @@
 ﻿require.config({
     paths: {
-        'QUnit': 'qunit-1.12.0',
-        'ko' : 'knockout-3.0.0'
+        'QUnit': 'lib/qunit-1.12.0',
+        'ko': 'lib/knockout-3.0.0',
+        'Squire': 'lib/Squire'
     },
     shim: {
         'QUnit': {
@@ -14,12 +15,9 @@
     }
 });
 
-require(
-    ['QUnit', 'tests/integration','tests/mocks'],
-    function (QUnit, integration, mocks) {
-        integration.run();
-        mocks.run();
-        QUnit.load();
-        QUnit.start();
-    }
-);
+require(['QUnit', 'tests/integration', 'tests/mocks'], function (q, i, m) {
+    i.run();
+    m.run();
+    q.load();
+    q.start();
+})

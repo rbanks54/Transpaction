@@ -1,28 +1,26 @@
-﻿/// <reference path="knockout-3.0.0.js" />
-/// <reference path="qunit-1.12.0.js" />
-/// <reference path="transactions.js" />
-/// <reference path="services.js" />
-
-define(['QUnit','transactions'], function (QUnit, transactionsModel) {
-    var run = function () {
+﻿
+define(['QUnit', 'transactions'], function (q, t) {
+    var runFn = function() {
         var viewModel = {};
-        QUnit.module('integration tests', {
-            setup: function () {
-                viewModel = new transactionsModel();
+
+        q.module('tests needing a better name', {
+            setup: function() {
+                viewModel = new t.transactionsViewModel();
             }
         });
 
-        QUnit.test('calls a non mocked function', function () {
-            QUnit.strictEqual(viewModel.transactions().length, 1, 'The length should be 1.');
+        q.test('more than one transaction', function() {
+            q.ok(viewModel.transactions().length > 1, true, 'There should be more than 1 transaction.');
         });
 
-        QUnit.test('should all have dates', function (assert) {
+        q.test('should all have dates', function() {
             var transactions = viewModel.transactions();
             for (var i = 0; i < transactions.length; i++) {
-                assert.ok(typeof (transactions[i].date !== 'undefined'));
-                assert.ok(transactions[i].date !== null);
+                q.ok(typeof(transactions[i].date()) !== 'undefined');
+                q.ok(transactions[i].date !== null);
             }
         });
     };
-    return { run: run };
+
+    return { 'run': runFn };
 });

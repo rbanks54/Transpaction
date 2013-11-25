@@ -1,9 +1,10 @@
-﻿'use strict';
+﻿define([], function () {
+    var me = {};
 
-define(function () {
-    return function () {
-        this.loadTransactions = function() {
-            return [{ date: '1/1/1', details: 'skfdjskdj', creditAmount: 10, debitAmount: 0 }]; //to be implemented
-        };
+    me.loadTransactions = function () {
+        return [{ date: '1/1/2013', details: 'first', credit: 10, debit: undefined },
+            { date: '2/1/2013', details:'second', credit:0, debit:10 }];
     };
+
+    return me;
 });
