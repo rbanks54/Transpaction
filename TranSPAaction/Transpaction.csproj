@@ -19,8 +19,6 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -62,6 +60,10 @@
     <Content Include="Default.html" />
     <Content Include="qunit-1.12.0.css" />
     <Content Include="Scripts\app.js" />
+    <None Include="Scripts\lib\jquery-2.0.3.intellisense.js" />
+    <Content Include="Scripts\lib\jquery-2.0.3.js" />
+    <Content Include="Scripts\lib\jquery-2.0.3.min.js" />
+    <Content Include="Scripts\transactions.min.js" />
     <Content Include="Scripts\lib\knockout-3.0.0.debug.js" />
     <Content Include="Scripts\lib\knockout-3.0.0.js" />
     <Content Include="Scripts\lib\qunit-1.12.0.js" />
@@ -70,6 +72,7 @@
     <Content Include="Scripts\services.js" />
     <Content Include="Scripts\tests\integration.js" />
     <Content Include="Scripts\testsMain.js" />
+    <Content Include="Scripts\tests\mocks.js" />
     <Content Include="Scripts\transactions.js" />
     <Content Include="tests.html" />
     <Content Include="Web.config" />
@@ -79,6 +82,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="Scripts\transactions.min.js.map">
+      <DependentUpon>transactions.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\lib\jquery-2.0.3.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -111,7 +118,6 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
