@@ -3,9 +3,12 @@
     var me = {};
 
     me.loadTransactions = function () {
-        var deferred = $.Deferred;
+        var deferred = $.Deferred();
 
-        $.ajax('/transactions')
+        $.ajax({
+            url: '/api/transactions',
+            contentType: 'application/json'
+        })
             .done(function (data) {
                 deferred.resolve(data);
             })

@@ -17,15 +17,13 @@ define(['ko', 'services'], function (ko, services) {
 
     me.transactionsViewModel = function () {
         var self = this;
-        var models = [];
         services.loadTransactions()
             .done(function (data) {
                 data.forEach(function (d) {
-                    models.push(new me.transactionModel(d.date, d.details, d.credit, d.debit));
+                    self.transactions.push(new me.transactionModel(d.date, d.details, d.credit, d.debit));
                 });
             });
-
-        self.transactions = ko.observableArray(models);
+        self.transactions = ko.observableArray([]);
     };
 
     return me;

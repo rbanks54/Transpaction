@@ -2,7 +2,8 @@
     paths: {
         'QUnit': 'lib/qunit-1.12.0',
         'ko': 'lib/knockout-3.0.0',
-        'Squire': 'lib/Squire'
+        'Squire': 'lib/Squire',
+        'jquery': 'lib/jquery-2.0.3'
     },
     shim: {
         'QUnit': {
